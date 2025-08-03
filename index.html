@@ -1,203 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nibras Ladies Tailor</title>
+    <title>Nibras Ladies Tailor - Custom Stitching & Design in Porur, Chennai</title>
+    <meta name="description" content="Expert ladies tailor in Porur, Chennai for custom wedding dresses, elegant blouses, and precision alterations. Nibras LadiesTailor, 41, Perumal Kovil St, Kungumam Nagar, Porur, Chennai, Tamil Nadu 600116.">
+    
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+
+    <meta property="og:title" content="Nibras Ladies Tailor - Custom Stitching & Design">
+    <meta property="og:description" content="Expert ladies tailor in Porur, Chennai.">
+    <meta property="og:image" content="assets/images/logo.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prata&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Nibras Ladies Tailor",
+        "image": "assets/images/logo.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "41, Perumal Kovil St, Kungumam Nagar, Porur",
+            "addressLocality": "Chennai",
+            "addressRegion": "TN",
+            "postalCode": "600116",
+            "addressCountry": "IN"
+        },
+        "telephone": "+919841658258",
+        "url": "https://yourwebsite.com",
+        "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
-    <div class="preloader" id="preloader">
-        <div class="spinner"></div>
-    </div>
+    <canvas id="trail-canvas"></canvas>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="C:\Users\sajjad\Documents\WhatsApp Image 2025-07-24 at 19.41.23_8d4bc5c5.jpg" alt="Nibras Ladies Tailor Logo">
+    <div class="preloader"><div class="hourglass"></div></div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo-link">
+                <img src="logo copy 2.jpg" alt="Nibras Ladies Tailor Logo" id="interactive-logo" class="logo-small" loading="lazy">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="#explore" class="nav-link">Find Us</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="header-controls">
+                <div class="theme-switch-wrapper"><label class="theme-switch" for="checkbox" aria-label="Toggle theme"><input type="checkbox" id="checkbox" /><div class="slider round"></div></label></div>
+                <div class="hamburger" aria-label="Toggle navigation" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
             </div>
-            <nav class="main-nav" id="main-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#explore">Explore</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-actions">
-                <button id="dark-mode-toggle" class="dark-mode-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <section id="home" class="hero fade-in">
-            <div class="container">
-                <h1>Crafting Elegance, Stitch by Stitch.</h1>
-                <p>Your perfect fit awaits at Nibras Ladies Tailor.</p>
-                <a href="#contact" class="btn">Get a Quote</a>
+        <section id="home" class="hero-section">
+            <video autoplay loop muted playsinline class="hero-video-background"><source src="assets/hero-background.mp4" type="video/mp4"></video>
+            <div class="hero-overlay"></div>
+            <canvas id="background-canvas"></canvas>
+            <div class="hero-content animate-on-scroll fade-in">
+                <h1>Nibras Ladies Tailor</h1>
+                <p>Crafting Elegance, One Stitch at a Time.</p>
+                <div class="hero-cta">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAM8kQVdSvFPVTiTncn0EmRjGe2JyytArPjudwM5lkedaRog/viewform?usp=header" target="_blank" class="btn btn-primary">Book an Appointment</a>
+                    <a href="#gallery" class="btn btn-secondary">View Our Portfolio</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <h2 class="section-title animate-on-scroll fade-in">Our Story of Elegance</h2>
+            <p class="section-subtitle animate-on-scroll fade-in">With over 15 years of experience in Porur, Chennai, Nibras Ladies Tailor specializes in crafting bespoke garments that blend timeless tradition with modern elegance. Our passion is turning fine fabrics into pieces of art that celebrate you.</p>
+        </section>
+
+        <section id="services" class="services-section">
+            <h2 class="section-title animate-on-scroll fade-in">Our Signature Services</h2>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll slide-in-up"><div class="service-icon"><i class="fas fa-magic"></i></div><h3>Custom Designs</h3><p>From exquisite bridal wear to chic casuals, we bring your dream outfit to life with precision and style.</p></div>
+                <div class="service-card animate-on-scroll slide-in-up" style="animation-delay: 0.2s;"><div class="service-icon"><i class="fas fa-cut"></i></div><h3>Expert Alterations</h3><p>We perfect the fit of your cherished clothes, ensuring you look and feel absolutely stunning.</p></div>
+                <div class="service-card animate-on-scroll slide-in-up" style="animation-delay: 0.4s;"><div class="service-icon"><i class="fas fa-feather-alt"></i></div><h3>Artisanal Embroidery</h3><p>Add a touch of unique artistry to your garments with our beautiful hand and machine embroidery.</p></div>
             </div>
         </section>
 
-        <section id="about" class="about-us slide-up">
-            <div class="container">
-                <h2>About Nibras Ladies Tailor</h2>
-                <p>At Nibras Ladies Tailor, we are passionate about creating custom-tailored garments that reflect your unique style and personality. With years of experience and a keen eye for detail, we specialize in a wide range of ladies' wear, from traditional outfits to contemporary designs. Our commitment is to provide high-quality craftsmanship, exceptional service, and a truly personalized tailoring experience.</p>
-                <p>We believe that every woman deserves to feel confident and beautiful in her clothes. Come visit us and let us bring your fashion vision to life!</p>
+        <section id="gallery" class="gallery-section">
+            <h2 class="section-title animate-on-scroll fade-in">Our Masterpieces</h2>
+            <div class="gallery-grid">
+                <a href="assets/images/design1.jpg" data-lightbox="gallery" data-title="Elegant Evening Gown" class="animate-on-scroll fade-in"><img src="assets/images/design1.jpg" alt="Custom Gown" loading="lazy"></a>
+                <a href="assets/images/design2.jpg" data-lightbox="gallery" data-title="Bridal Lehenga" class="animate-on-scroll fade-in" style="animation-delay: 0.1s;"><img src="assets/images/design2.jpg" alt="Bridal Lehenga" loading="lazy"></a>
+                <a href="assets/images/design3.jpg" data-lightbox="gallery" data-title="Designer Blouse" class="animate-on-scroll fade-in" style="animation-delay: 0.2s;"><img src="assets/images/design3.jpg" alt="Designer Blouse" loading="lazy"></a>
+                <a href="assets/images/design4.jpg" data-lightbox="gallery" data-title="Modern Salwar Kameez" class="animate-on-scroll fade-in" style="animation-delay: 0.3s;"><img src="assets/images/design4.jpg" alt="Modern Salwar" loading="lazy"></a>
+                <a href="assets/images/design5.jpg" data-lightbox="gallery" data-title="Festive Wear" class="animate-on-scroll fade-in" style="animation-delay: 0.4s;"><img src="assets/images/design5.jpg" alt="Festive Wear" loading="lazy"></a>
+                <a href="assets/images/design6.jpg" data-lightbox="gallery" data-title="Casual Kurti" class="animate-on-scroll fade-in" style="animation-delay: 0.5s;"><img src="assets/images/design6.jpg" alt="Casual Kurti" loading="lazy"></a>
+            </div>
+            <div class="instagram-cta animate-on-scroll fade-in">
+                <p>For the latest designs and behind-the-scenes magic...</p>
+                <a href="https://www.instagram.com/nibras_ladies_tailor" target="_blank" class="btn btn-instagram"><i class="fab fa-instagram"></i> Follow Us on Instagram</a>
             </div>
         </section>
 
-        <section id="services" class="services fade-in">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <h3>Custom Blouses</h3>
-                        <p>Perfectly fitted blouses for sarees and lehengas.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Salwar Kameez</h3>
-                        <p>Elegant and comfortable salwar suits tailored to your measurements.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Anarkalis & Gowns</h3>
-                        <p>Stunning designs for special occasions.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Lehengas</h3>
-                        <p>Intricately designed and custom-fitted lehengas.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Dress Alterations</h3>
-                        <p>Expert alterations to ensure a perfect fit for any garment.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Embroidery & Embellishments</h3>
-                        <p>Add a touch of uniqueness to your outfits.</p>
-                    </div>
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title animate-on-scroll fade-in">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                 <div class="testimonial-card animate-on-scroll slide-in-up">
+                    <img src="assets/images/client1.jpg" alt="Client Priya S." loading="lazy">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>Absolutely amazing craftsmanship! My wedding dress was more beautiful than I ever imagined. Thank you, Nibras!</p>
+                    <h4>— Priya S.</h4>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card animate-on-scroll slide-in-up" style="animation-delay: 0.2s;">
+                    <img src="assets/images/client2.jpg" alt="Client Anjali R." loading="lazy">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>The fitting is always perfect. They transformed my old saree into a stunning modern dress. Highly recommended!</p>
+                    <h4>— Anjali R.</h4>
+                    <div class="stars">★★★★★</div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="gallery slide-up">
-            <div class="container">
-                <h2>Our Work</h2>
-                <div class="gallery-grid">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+1" alt="Tailoring Design 1">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+2" alt="Tailoring Design 2">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+3" alt="Tailoring Design 3">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+4" alt="Tailoring Design 4">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+5" alt="Tailoring Design 5">
-                    <img src="https://via.placeholder.com/300x200/FFC0CB/000000?text=Design+6" alt="Tailoring Design 6">
+        <section id="explore" class="explore-section">
+            <h2 class="section-title animate-on-scroll fade-in">Visit Our Boutique</h2>
+            <p class="section-subtitle animate-on-scroll fade-in">Find us at: 41, Perumal Kovil St, Kungumam Nagar, Porur, Chennai, Tamil Nadu 600116</p>
+            <div class="map-container animate-on-scroll fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.815226490333!2d80.14445857591636!3d13.047535513220376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526115a354117b%3A0x2802878b273b5161!2sNibras%20LadiesTailor!5e0!3m2!1sen!2sin!4v1722271295966!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+        <section id="faq" class="faq-section">
+            <h2 class="section-title animate-on-scroll fade-in">Your Questions, Answered</h2>
+            <div class="faq-accordion">
+                <div class="faq-item animate-on-scroll fade-in">
+                    <button class="faq-question"><span>What are your business hours?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>We are open from 10:00 AM to 9:00 PM, Monday to Saturday. We are closed on Sundays. Our current time in Chennai is <span id="current-time"></span>.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-in">
+                    <button class="faq-question"><span>Do I need an appointment for a fitting?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Appointments are highly recommended for design consultations and fittings to ensure you have our undivided attention. Walk-ins are always welcome for simple alterations or inquiries.</p></div>
+                </div>
+                <div class="faq-item animate-on-scroll fade-in">
+                    <button class="faq-question"><span>How long does custom stitching take?</span><i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Typically, a custom outfit takes between 7 to 14 days. For intricate bridal wear, we recommend booking at least a month in advance. We also offer express services for an additional charge.</p></div>
                 </div>
             </div>
         </section>
-
-        <section id="video-demo" class="video-demo fade-in">
-            <div class="container">
-                <h2>A Glimpse of Our Craft</h2>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <section id="contact" class="contact-section">
+            <h2 class="section-title animate-on-scroll fade-in">Let's Create Together</h2>
+            <p class="section-subtitle animate-on-scroll fade-in">Your perfect outfit is just a conversation away. Reach out to us directly for a personalized design consultation. We're excited to hear from you!</p>
+            <div class="contact-methods animate-on-scroll fade-in">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>For immediate inquiries</p>
+                    <a href="tel:+919841658258">+91 9841658258</a>
                 </div>
-                <p class="video-note"><em>(Replace "your-video-id" with your actual YouTube video ID)</em></p>
-            </div>
-        </section>
-
-        <section id="explore" class="explore slide-up">
-            <div class="container">
-                <h2>Find Us</h2>
-                <p>Visit our shop to discuss your tailoring needs.</p>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.994324158933!2d80.24559381482229!3d13.045761390822695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52668e1a1b1a1b%3A0x1b1b1b1b1b1b1b1b!2sJaya%20Nalla%20Street%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1678901234567!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>Share designs & ideas</p>
+                    <a href="https://wa.me/919841658258" target="_blank">Chat With Us</a>
                 </div>
-                <p class="address"><strong>Nibras Ladies Tailor</strong><br>No. 23, Jaya Nalla Street, Chennai, Tamil Nadu</p>
-            </div>
-        </section>
-
-        <section id="faq" class="faq fade-in">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">What kind of garments do you tailor?</button>
-                        <div class="accordion-content">
-                            <p>We specialize in a wide range of ladies' wear including blouses, salwar kameez, anarkalis, gowns, lehengas, and more. We also offer expert alteration services.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">How long does it take to get a garment tailored?</button>
-                        <div class="accordion-content">
-                            <p>The turnaround time depends on the complexity of the design and our current workload. We will provide an estimated delivery date when you place your order.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Do I need to bring my own fabric?</button>
-                        <div class="accordion-content">
-                            <p>Yes, typically clients bring their own fabric. We can also assist you in choosing the right fabric for your design if needed.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Do you offer home visits for measurements?</button>
-                        <div class="accordion-content">
-                            <p>Currently, we do not offer home visits. All measurements are taken at our shop to ensure accuracy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact slide-up">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Contact Details</h3>
-                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+919841658258">9841658258</a></p>
-                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:sheiksheriff@gmail.com">sheiksheriff@gmail.com</a></p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> No. 23, Jaya Nalla Street, Chennai</p>
-                        <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/nibras_ladies_tailor/" target="_blank">@nibras_ladies_tailor</a></p>
-                    </div>
-                    <div class="contact-form">
-                        <h3>Send us a Message</h3>
-                        <form id="contactForm">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <input type="text" name="subject" placeholder="Subject">
-                            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-                            <button type="submit" class="btn">Send Message</button>
-                            <div id="form-messages"></div>
-                        </form>
-                    </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Email Us</h3>
+                    <p>For detailed requests</p>
+                    <a href="mailto:sheiksheriff@gmail.com">sheiksheriff@gmail.com</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Nibras Ladies Tailor. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/nibras_ladies_tailor/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-        </div>
+    <footer class="footer">
+        <p>© 2025 Nibras Ladies Tailor. All Rights Reserved. Designed with ❤️ in Chennai</p>
     </footer>
+    
+    <a href="https://wa.me/919841658258" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#home" class="back-to-top" aria-label="Go back to top"><i class="fas fa-arrow-up"></i></a>
 
-    <a href="https://wa.me/919841658258" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
