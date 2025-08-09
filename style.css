@@ -48,39 +48,128 @@ body::before {
     background: radial-gradient(ellipse at center, transparent 30%, var(--background-color) 80%);
     opacity: 0.5;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 h1, h2, h3, h4 { font-family: var(--font-primary); color: var(--heading-color); font-weight: 400; }
 section { padding: 100px 5%; position: relative; }
 .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 20px; position: relative; }
 .section-title::after { content: ''; display: block; width: 70px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); margin: 15px auto 0; border-radius: 2px; }
 .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 60px; font-size: 1.1rem; line-height: 1.8; }
-.about-section, .services-section, .faq-section, .explore-section { background-color: var(--background-alt-color); }
-canvas#trail-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    pointer-events: none;
+.about-section, .services-section, .faq-section, .explore-section, .testimonials-section, .gallery-section { background-color: var(--background-alt-color); }
+
+/* All Background Animations */
+#trail-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+#background-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+#flower-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+
+.flower {
+    position: absolute;
+    top: -50px;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23E91E63" d="M50,10 C40,40 10,40 10,60 C10,80 40,90 50,90 C60,90 90,80 90,60 C90,40 60,40 50,10 Z" /></svg>');
+    background-size: contain;
+    opacity: 0;
+    animation: fall linear infinite;
+}
+[data-theme="dark"] .flower {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23F06292" d="M50,10 C40,40 10,40 10,60 C10,80 40,90 50,90 C60,90 90,80 90,60 C90,40 60,40 50,10 Z" /></svg>');
+}
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
-/* Logo Fix */
-#interactive-logo {
-    width: 55px;
-    height: 55px;
+/* ---- New Butterfly Animation Styles ---- */
+.butterfly {
+    position: fixed;
+    width: 60px;
+    height: 50px;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    animation: float 15s infinite linear, fade-in-butterfly 2s forwards;
+    transform-origin: center;
+    filter: drop-shadow(0 0 5px rgba(232, 30, 99, 0.4));
+}
+.butterfly-body {
+    position: absolute;
+    width: 6px;
+    height: 30px;
+    background-color: #333;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    z-index: 2;
+}
+.wing {
+    position: absolute;
     border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
+    background: linear-gradient(135deg, #ff9bb3 0%, #e91e63 50%, #ad1457 100%);
+    z-index: 1;
+}
+.upper-wing {
+    width: 30px;
+    height: 40px;
+}
+.lower-wing {
+    width: 25px;
+    height: 35px;
+    top: 25px;
+}
+.left-wing {
+    left: 0;
+    transform-origin: right center;
+    animation: flap-left 0.8s infinite alternate ease-in-out;
+}
+.right-wing {
+    right: 0;
+    transform-origin: left center;
+    /* Flips the element horizontally to mirror the left wing */
+    transform: scaleX(-1);
+    animation: flap-right 0.8s infinite alternate ease-in-out;
+}
+.wing-detail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+}
+[data-theme="dark"] .wing {
+    background: linear-gradient(135deg, #ff9bb3 0%, #f06292 50%, #4a148c 100%);
+}
+@keyframes flap-left {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(60deg); }
+}
+@keyframes flap-right {
+    0% { transform: rotateY(0deg) scaleX(-1); }
+    100% { transform: rotateY(-60deg) scaleX(-1); }
+}
+@keyframes fade-in-butterfly { 
+    to { opacity: 0.8; } 
+}
+@keyframes float {
+    0% { transform: translate(0vw, 10vh) rotate(0deg); }
+    25% { transform: translate(25vw, -10vh) rotate(20deg); }
+    50% { transform: translate(50vw, 20vh) rotate(0deg); }
+    75% { transform: translate(75vw, 10vh) rotate(-20deg); }
+    100% { transform: translate(100vw, 15vh) rotate(0deg); }
+}
+
+/* Interactive Logo Fix */
+#interactive-logo {
+    width: 55px; height: 55px; border-radius: 50%; object-fit: cover; cursor: pointer;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    box-shadow: var(--shadow);
-    transform-origin: top left; /* KEY CHANGE: Sets the anchor point to the top-left corner */
-    position: relative; /* Ensures it appears above other elements when transformed */
-    z-index: 101;
+    box-shadow: var(--shadow); transform-origin: top left;
+    position: relative; z-index: 101;
 }
 #interactive-logo.enlarged {
-    /* We now use transform to scale it, which respects the origin point */
     transform: scale(2.75);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
@@ -112,7 +201,6 @@ input:checked + .slider:before { transform: translateX(24px); }
 .hero-section { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
 .hero-video-background { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -3; transform: translateX(-50%) translateY(-50%); }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: linear-gradient(45deg, rgba(173, 20, 87, 0.5), rgba(233, 30, 99, 0.4)); }
-#background-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 .hero-content { z-index: 1; color: #fff; }
 .hero-content h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 4.5rem; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
 .hero-content p { font-size: 1.5rem; font-style: italic; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); margin: 10px 0 40px; }
@@ -125,7 +213,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 
 /* Other Sections */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-.service-card { background: var(--background-color); padding: 40px; text-align: center; border-radius: 10px; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+.service-card { background: var(--white-color); padding: 40px; text-align: center; border-radius: 10px; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
 .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
 .service-icon { font-size: 2.5rem; color: #fff; background: linear-gradient(45deg, var(--primary-color), var(--primary-dark)); width: 80px; height: 80px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; margin-bottom: 25px; }
 .service-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
@@ -133,7 +221,7 @@ input:checked + .slider:before { transform: translateX(24px); }
 .gallery-grid a { display: block; overflow: hidden; border-radius: 10px; box-shadow: var(--shadow); }
 .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .gallery-grid a:hover img { transform: scale(1.1); }
-.instagram-cta { text-align: center; margin-top: 60px; padding: 40px; background-color: var(--background-color); border-radius: 10px; box-shadow: var(--shadow); }
+.instagram-cta { text-align: center; margin-top: 60px; padding: 40px; background-color: var(--white-color); border-radius: 10px; box-shadow: var(--shadow); }
 .instagram-cta p { font-size: 1.2rem; font-family: var(--font-primary); margin-bottom: 20px; color: var(--heading-color); }
 .btn-instagram { color: #fff; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); display: inline-flex; align-items: center; gap: 10px; padding-left: 25px; padding-right: 25px; }
 .btn-instagram:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4); }
